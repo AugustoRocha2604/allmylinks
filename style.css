@@ -47,7 +47,8 @@ body * {
 /*seletor de id*/
 #container {
   /*border: 1px solid red; espessura, tipo e cor da borda da caixa*/
-  width: 360px; /*largura da caixa*/
+  width: 100%; /*largura da caixa*/
+  max-width: 588px;
   /* height: 712px; altura da caixa, normalmente apagada no final do projeto, por conta da altura seguir o conteúdo dentro da caixa*/
   margin: 56px auto 0px; /*serve para alinhar o conteúdo ao meio da caixa. Porém, em elementos "in line", "margin:auto" não funciona, apenas em elementos com display "block"*/
   padding: 0 25px;
