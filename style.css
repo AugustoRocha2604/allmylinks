@@ -11,7 +11,7 @@
   --switch-bg-url: url(./assets/moon-stars.svg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
-  --highlight-color: rgba(255, 255, 255, 0.20);
+  --highlight-color: rgba(255, 255, 255, 0.2);
 }
 
 .light {
@@ -21,7 +21,7 @@
   --switch-bg-url: url(./assets/sun.svg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
-  --highlight-color: rgba(0, 0, 0, 0.10);
+  --highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -45,7 +45,6 @@ body {
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
-  
 }
 
 /*seletor de id*/
@@ -97,7 +96,7 @@ body * {
   transform: translateY(
     -50%
   ); /*transform é usado para mudar de todas as formas possíveis o elemento em questão. Pode ser usado para posicionamento x e y, distorção, "andares" do eixo z etc.*/
-  animation: slide-back-of-theme-change-button 0.2s ;
+  animation: slide-back-of-theme-change-button 0.2s;
 }
 
 #switch button:hover {
@@ -226,14 +225,13 @@ footer a {
 
 /*animations*/
 
-@keyframes slide-in-of-theme-change-button{
+@keyframes slide-in-of-theme-change-button {
   from {
     left: 0;
   }
   to {
     left: 50%;
   }
-
 }
 
 @keyframes slide-back-of-theme-change-button {
@@ -243,5 +241,4 @@ footer a {
   to {
     left: 0;
   }
-
 }
