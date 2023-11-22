@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- está definindo um documento html5-->
+<html lang="pt-br">
+  <!-- root element ( elemento raiz) lang=linguagem -->
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <meta charset="UTF-8" />
+    <!-- charset="UTF-8" denife quais os conjuntos de caracteres que poderão ser usados na pág. Ex: ~, ç, '' etc  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- viewport é tudo o que é vísivel na pág./ comando para ajustar a viewport de acordo com o dispositivo -->
+    <title>DevLinks</title>
+    <!-- única coisa vísivel à quem está acessando a pag - título da guia-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- linkar estilo do CSS com o HTML-->
+  </head>
+  <body>
+    <!-- caixa com atributo ID, que significa "identifier", ou seja, é o que irá identificar essa caixa-->
+    <div id="container">
+      <div id="profile">
+        <img
+          src="./assets/avatar.png"
+          alt="Foto de Augusto Rocha usando óculos escuro preto, boné preto para trás, bandana verde no pescoço e uma camiseta branca com mangas azul claro e uma estampa no peito."
+        />
+        <!--alt serve para descrever a imagem em forma de texto, caso ela não carregue,alguém tenha alguma dificuldade em vê, para o motor de busca do google etc...-->
+        <p>@augustorochh</p>
+      </div>
+
+      <div id="switch" onclick="toggleMode()">
+        <!-- "onclick" significa que, ao clicar, a ação "toggleMode" será aplicada-->
+        <button></button>
+        <span> </span>
+      </div>
+
+      <ul>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/augusto-rocha-698752291/"
+            target="_blank"
+            >Linkedin</a
+          >
+        </li>
+
+        <li>
+          <a href="https://github.com/AugustoRocha2604" target="_blank"
+            >Github</a
+          >
+        </li>
+
+        <li>
+          <a href="https://www.facebook.com/augusto.araujo.564" target="_blank"
+            >Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://twitter.com/augustorochh" target="_blank">Twitter</a>
+        </li>
+      </ul>
+      <div id="social-links">
+        <a href="https://steamcommunity.com/id/FkMr/" target="_blank">
+          <ion-icon name="logo-steam"></ion-icon>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCZO-bf2KV5mqQEraj9r_FJw"
+          target="_blank"
+        >
+          <ion-icon name="logo-youtube"></ion-icon>
+        </a>
+        <a href="https://instagram.com/augustorochh" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="https://tiktok.com/@augustorochh" target="_blank">
+          <ion-icon name="logo-tiktok"></ion-icon>
+        </a>
+      </div>
+
+      <footer>
+        <p>Feito pela</p>
+        <a href="https://rocketseat.com.br/" target="_blank">Rocketseat</a>
+      </footer>
+      <!-- "footer" será o texto que ficará no fim da página. Normalmente, é usado para colocar os "créditos" e outras informações do site-->
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+
+<!-- dois filhos = head e body
+head: tag responsável em ajustar configs do doc que não são visíveis para o que acessar a página
+body: parte visível da pág. -->

@@ -1,0 +1,201 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --links-bg-color: rgba(255, 255, 255, 0.1);
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --links-bg-color: rgba(255, 255, 255, 0.05);
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --switch-bg-url: url(./assets/sun.svg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg); /*URL é usado para encontra em que lugar do mundo/internet está o arquivo. No caso, o arquivo era uma imagem e estava na pasta assets*/
+
+  /* background-repeat: no-repeat; /*comando utilizado para que a imagem não se repita no display do site, deixando apenas uma imagem*/
+
+  /* background-position: top center; /*linha de código utilizada para colocar a imagem em uma posição específica no display do site (não esquecer do eixo x e y) */
+
+  /* background-size: cover; /*comando para ditar o tamanho do background, no caso, no tamanho da imagem. Esta informção "cover" serve para cobrir toda a área de exibição do site, sem deixar partes brancas*/
+
+  /* conseguimos agrupar todas essas informações em uma só linha de código/uma única propriedade */
+
+  /* background: color image repeat position/size etc... */
+
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/*seletor de id*/
+#container {
+  /*border: 1px solid red; espessura, tipo e cor da borda da caixa*/
+  width: 360px; /*largura da caixa*/
+  /* height: 712px; altura da caixa, normalmente apagada no final do projeto, por conta da altura seguir o conteúdo dentro da caixa*/
+  margin: 56px auto 0px; /*serve para alinhar o conteúdo ao meio da caixa. Porém, em elementos "in line", "margin:auto" não funciona, apenas em elementos com display "block"*/
+  padding: 0 25px;
+}
+
+/*profile*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+} /*se o display for "block", o comando "text-align" não funciona. Ou seja, se for "block", "text-align" não funciona, se for "in line", "margin:auto" não funciona*/
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/*button*/
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  height: 32px;
+  width: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: white var(--switch-bg-url) no-repeat center;
+
+  position: absolute; /*posicionamento absoluto automaticamente faz uma sobreposição de camadas*/
+  top: 50%;
+  left: 0;
+  z-index: 2; /*escolhe o "andar" em que o item ficará. Nesse caso, ficará no andar 1*/
+  transform: translateY(
+    -50%
+  ); /*transform é usado para mudar de todas as formas possíveis o elemento em questão. Pode ser usado para posicionamento x e y, distorção, "andares" do eixo z etc.*/
+  
+}
+
+.light #switch button {
+  right: 0;
+  left: initial; /* initial porque o left deve voltar a seu valor de origem para que o right zero possa funcionar, porque senão seria "left: 0; right: 0;", com o left "anulando" o right.*/
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color);
+  background: var(--surface-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /*também pode ser row, porém, é o que já vem como padrão no comando flex-direction*/
+  gap: 16px; /*coloca uma espaço entre os elementos*/
+  padding: 24px 0px;
+}
+
+ul li a {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center; /*serve para alinhar, nesse caso, o texto ao meio da caixa, continuando junto ao topo da caixa*/
+  /*align-items serve para alinhar, nesse caso, o texto ao eixo X "main" da caixa. Como, nesse caso, existe o padding, o conteúdo automaticamente já fica alinhado ao eixo X da caixa*/
+  border-radius: 8px; /*arredondamento da borda da caixa*/
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none; /*além do none, existem o decorações de texto: underline, overline e line-through*/
+  font-weight: 500; /*negrito do texto*/
+
+  transition: background 0.3s;
+}
+
+/*"hover" são propriedades que serão aplicadas quando o mouse for passado em cima de um conteúdo específico na página*/
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid black;
+}
+
+.light ul li a {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.light ul li a:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+}
+/*social links*/
+
+#social-links {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  font-size: 24px;
+  justify-content: center;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: background 0.3s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.light #social-links a:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+/*footer*/
+
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
+footer p {
+  display: inline;
+}
+
+footer a {
+  font-weight: 500;
+}
