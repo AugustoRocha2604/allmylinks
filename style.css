@@ -37,11 +37,13 @@ body {
   /* background: color image repeat position/size etc... */
 
   background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
 }
 
 body * {
   font-family: "Inter", sans-serif;
   color: var(--text-color);
+  
 }
 
 /*seletor de id*/
@@ -93,7 +95,6 @@ body * {
   transform: translateY(
     -50%
   ); /*transform é usado para mudar de todas as formas possíveis o elemento em questão. Pode ser usado para posicionamento x e y, distorção, "andares" do eixo z etc.*/
-  
 }
 
 .light #switch button {
@@ -199,4 +200,16 @@ footer p {
 
 footer a {
   font-weight: 500;
+}
+
+/*media queries*/
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
 }
