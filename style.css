@@ -11,6 +11,7 @@
   --switch-bg-url: url(./assets/moon-stars.svg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
+  --highlight-color: rgba(255, 255, 255, 0.20);
 }
 
 .light {
@@ -20,6 +21,7 @@
   --switch-bg-url: url(./assets/sun.svg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
+  --highlight-color: rgba(0, 0, 0, 0.10);
 }
 
 body {
@@ -95,11 +97,17 @@ body * {
   transform: translateY(
     -50%
   ); /*transform é usado para mudar de todas as formas possíveis o elemento em questão. Pode ser usado para posicionamento x e y, distorção, "andares" do eixo z etc.*/
+  animation: slide-back-of-theme-change-button 0.2s ;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial; /* initial porque o left deve voltar a seu valor de origem para que o right zero possa funcionar, porque senão seria "left: 0; right: 0;", com o left "anulando" o right.*/
+  animation: slide-in-of-theme-change-button 0.2s forwards;
+  /* right: 0;
+  left: initial; initial porque o left deve voltar a seu valor de origem para que o right zero possa funcionar, porque senão seria "left: 0; right: 0;", com o left "anulando" o right. Porém, para ter animação no botão, foram trocados para o comando "animation"*/
 }
 
 #switch span {
@@ -161,6 +169,7 @@ ul li a:hover {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.9);
 }
+
 /*social links*/
 
 #social-links {
@@ -187,6 +196,7 @@ ul li a:hover {
 .light #social-links a:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+
 /*footer*/
 
 footer {
@@ -212,4 +222,26 @@ footer a {
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
+}
+
+/*animations*/
+
+@keyframes slide-in-of-theme-change-button{
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+
+}
+
+@keyframes slide-back-of-theme-change-button {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+
 }
